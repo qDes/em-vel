@@ -8,7 +8,7 @@ import (
 )
 
 func HalCmd(command, val string) {
-	cmd := exec.Command("halcmd", command, val)
+	cmd := exec.Command("halcmd", "setp", command, val)
 	cmd.Stdin = strings.NewReader("")
 	var out bytes.Buffer
 	cmd.Stdout = &out
