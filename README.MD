@@ -1,4 +1,8 @@
 . /home/lar/linuxcnc-dev/scripts/rip-environment
+
+http://192.168.0.102:7000/v1/halcmd?command=inner-loop-velo.0.friction&val=0.5
+
+
 Owner   Type  Dir         Value  Name
     41  float RW            0.5  inner-loop-velo.0.friction
     41  float RW              1  inner-loop-velo.0.k-freq
