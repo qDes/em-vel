@@ -17,3 +17,22 @@ func HalCmd(command, val string) {
 		log.Fatal(err)
 	}
 }
+
+func GetCmd(par string) string{
+	switch par {
+	case "friction":
+		return "inner-loop-velo.0.friction"
+	case "calib":
+		return "inner-loop-velo.0.out-offset"
+	case "shaker_freq":
+		return "inner-loop-velo.0.shaker-freq"
+	case "m_inner":
+		return "inner-loop-velo.0.m-inner"
+	case "f_set":
+		return "inner-loop-velo.0.out-lim"
+	default:
+		return "sasi"
+	}
+
+
+}
