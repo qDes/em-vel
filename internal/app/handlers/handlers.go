@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"time"
 )
 
 func RunCmd(w http.ResponseWriter, r *http.Request) {
@@ -25,7 +26,8 @@ func ChangeVeloParams(w http.ResponseWriter, r *http.Request) {
 	for k, v := range params {
 		cmd := halcmd.GetCmd(k)
 		if cmd != "sasi" {
-			//halcmd.HalCmd(cmd, v[0])
+			halcmd.HalCmd(cmd, v[0])
+			time.Sleep(100 * time.Millisecond)
 		}
 		fmt.Println(k, cmd, v)
 	}
