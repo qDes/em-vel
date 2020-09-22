@@ -19,3 +19,14 @@ func RunCmd(w http.ResponseWriter, r *http.Request) {
 func Checker(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("check data")
 }
+
+func ChangeVeloParams(w http.ResponseWriter, r *http.Request) {
+	params := r.URL.Query()
+	for k, v := range params {
+		cmd := halcmd.GetCmd(k)
+		if cmd != "sasi" {
+			//halcmd.HalCmd(cmd, v[0])
+		}
+		fmt.Println(k, cmd, v)
+	}
+}
